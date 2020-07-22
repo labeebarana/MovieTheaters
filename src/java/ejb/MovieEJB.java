@@ -28,6 +28,11 @@ public class MovieEJB {
         em.persist(object);
     }
 
+    /**
+     * returns all theaters
+     * @return returns a List of the theaters
+     *
+     */
     public List<Theater> findAllTheaters(){
         return em.createNamedQuery("Theater.findAll", Theater.class).getResultList();
     }
