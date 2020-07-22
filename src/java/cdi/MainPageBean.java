@@ -19,7 +19,7 @@ import javax.enterprise.context.RequestScoped;
 @Named(value = "mainPageBean")
 @RequestScoped
 public class MainPageBean {
-
+//this is a test for the git repo
     @EJB
     private MovieEJB movieEJB;
 
