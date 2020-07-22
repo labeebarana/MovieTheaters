@@ -36,7 +36,11 @@ public class MovieEJB {
     public List<Theater> findAllTheaters(){
         return em.createNamedQuery("Theater.findAll", Theater.class).getResultList();
     }
-    
+    /**
+     * Finds the movie by the movie ID  
+     * @param movieID The primary key for movie entity
+     * @return the movie in String format
+     */
     public Movie getMovie(int movieID){
        return em.createNamedQuery("Movie.findByMovieid", Movie.class).setParameter("movieID", movieID).getSingleResult(); 
     }
