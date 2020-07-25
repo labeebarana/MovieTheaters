@@ -22,6 +22,7 @@ public class MainPageBean {
 //this is a test for the git repo
     @EJB
     private MovieEJB movieEJB;
+    private Theater theater = new Theater();
 
     
     public MainPageBean() {

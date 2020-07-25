@@ -41,8 +41,8 @@ public class MovieEJB {
      * @param movieID The primary key for movie entity
      * @return the movie in String format
      */
-    public Movie getMovie(int movieID){
-       return em.createNamedQuery("Movie.findByMovieid", Movie.class).setParameter("movieID", movieID).getSingleResult(); 
+    public Theater getTheater(int zipcode){
+       return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getSingleResult(); 
     }
     
     public List<MovietimePK> getMoviesForTheater(int theaterID){
@@ -52,6 +52,7 @@ public class MovieEJB {
     public List<Theater> getTheatersForZipcode(int zipcode){
         return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getResultList();
     }
+     
     
     
 }
