@@ -13,6 +13,7 @@ import java.util.Map;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 
 /**
@@ -48,16 +49,19 @@ public class ShowTheatersBean {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
         String zipcode = params.get("zipcode");
-        theater = movieEJB.getTheater(Integer.parseInt(zipcode));
+        theater = (Theater) movieEJB.getTheatersForZipcode(Integer.parseInt(zipcode));
         return "ShowTheater";
     }
         
     public List<Theater> getTheaterList(){
         if (theater != null)
-            return movieEJB.getTheatersForZipcode(theater.getTheaterid());
+            return movieEJB.getTheatersForZipcode(theater.getZipcode());
         else
             return null;
     }
+    
+  
+    
         
    
     

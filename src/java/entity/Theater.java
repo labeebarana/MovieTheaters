@@ -7,6 +7,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -104,6 +105,7 @@ public class Theater implements Serializable {
     public void setTicketCollection(Collection<Ticket> ticketCollection) {
         this.ticketCollection = ticketCollection;
     }
+    
 
     @Override
     public int hashCode() {

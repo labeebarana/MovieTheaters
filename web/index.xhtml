@@ -11,12 +11,13 @@
             <h:column>
                 
                     <h:outputLabel value="Enter zipcode"/>
-                    <h:inputText value="#{MainPageBean.theater.zipcode}" />
+                    <h:inputText value="#{mainPageBean.theater.zipcode}" />
                 
         </h:column>
             
             <h:commandButton value="Find Theaters"
-                             action="#{ShowTheatersBean.showTheaters}">
+                             action="#{showTheatersBean.showTheaters()}">
+                <f:param name="zipcode" value="#{mainPageBean.theater.zipcode}" />
         </h:commandButton>
             
     </h:form>
