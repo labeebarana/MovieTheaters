@@ -52,7 +52,7 @@ public class MovieEJB {
     public List<Theater> getTheatersForZipcode(int zipcode){
         return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getResultList();
     }
+    
+    
      
-    
-    
 }

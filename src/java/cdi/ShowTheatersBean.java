@@ -10,6 +10,7 @@ import entity.Movietime;
 import entity.Theater;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -45,6 +46,11 @@ public class ShowTheatersBean {
         this.theater = theater;
         return "ShowTheater";
     }
+    
+    @PostConstruct
+    public void init() {
+    theater = new Theater();
+ }
     
     public String showTheaters(){
         FacesContext fc = FacesContext.getCurrentInstance();

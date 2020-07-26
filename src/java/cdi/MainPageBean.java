@@ -19,7 +19,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "mainPageBean")
 @RequestScoped
-public class MainPageBean {
+public class MainPageBean{
 //this is a test for the git repo
     @EJB
     private MovieEJB movieEJB;
@@ -46,10 +46,13 @@ public class MainPageBean {
         this.theater = theater;
     }
     
-    @PostConstruct
+    
+    
+   @PostConstruct
     public void init() {
     theater = new Theater();
-}
+   }
+    
     
     public List<Theater> getTheaterList(){
             return movieEJB.findAllTheaters();
