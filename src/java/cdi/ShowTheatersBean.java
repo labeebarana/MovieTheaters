@@ -26,6 +26,7 @@ public class ShowTheatersBean {
 
     @EJB
     private MovieEJB movieEJB;
+    private List<Theater> theaterList;
     private Theater theater;
 
     
@@ -49,7 +50,7 @@ public class ShowTheatersBean {
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
         String zipcode = params.get("zipcode");
-        theater = (Theater) movieEJB.getTheatersForZipcode(Integer.parseInt(zipcode));
+        theaterList = movieEJB.getTheatersForZipcode(Integer.parseInt(zipcode));
         return "ShowTheater";
     }
         
