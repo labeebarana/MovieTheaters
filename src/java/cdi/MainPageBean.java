@@ -48,10 +48,10 @@ public class MainPageBean{
     
     
     
-   @PostConstruct
+  /* @PostConstruct
     public void init() {
     theater = new Theater();
-   }
+   } */
     
     
     public List<Theater> getTheaterList(){

@@ -32,6 +32,7 @@ public class ShowTheatersBean {
 
     
     public ShowTheatersBean() {
+        theater = new Theater();
     }
 
     public Theater getTheater() {

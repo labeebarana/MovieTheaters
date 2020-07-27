@@ -7,22 +7,22 @@
         <title>Main Page</title>
     </h:head>
     <h:body>
-         <f:view>
-        <h:form>
+        <f:view>
+            <h:form>
             <h:panelGrid columns="2">
                 
                     <h:outputLabel value="Enter zipcode"/>
-                    <h:inputText id="zipcode" value="#{mainPageBean.theater.zipcode}" />
+                    <h:inputText value="#{showTheatersBean.theater.zipcode}" />
                     </h:panelGrid>
                     
             
             <h:commandButton value="Find Theaters"
                              action="#{showTheatersBean.showTheaters()}">
-                <f:param name="zipcode" value="#{mainPageBean.theater.zipcode}" />
-        </h:commandButton>
+                <f:param name="zipcode" value="#{showTheatersBean.theater.zipcode}" />
+            </h:commandButton>
             
-    </h:form>
-    </f:view>
+            </h:form>
+        </f:view>
                 
     </h:body>
 </html>
