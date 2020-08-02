@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -24,7 +25,7 @@ import javax.faces.context.FacesContext;
  * @author labeebarana
  */
 @Named(value = "showMoviesBean")
-@ApplicationScoped
+@RequestScoped
 public class ShowMoviesBean implements Serializable {
 
     @EJB
@@ -56,8 +57,11 @@ public class ShowMoviesBean implements Serializable {
     public String showMovies(){
         FacesContext fc = FacesContext.getCurrentInstance();
         Map<String, String> params = fc.getExternalContext().getRequestParameterMap();
-        String theaterid = params.get("theaterid");
-        movieList = movieEJB.getMoviesForTheater(Integer.parseInt(theaterid));
+        String zipcode = params.get("zipcode");
+        List<Theater> theaterID = movieEJB.getTheaterIDfromZipCode(Integer.parseInt(zipcode));
+        
+        int sd = theaterID.get(0).getTheaterid(); 
+        movieList = movieEJB.getMoviesForTheater(sd);
         return "ShowMovies";
     }
         
