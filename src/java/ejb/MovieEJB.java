@@ -45,14 +45,16 @@ public class MovieEJB {
        return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getSingleResult(); 
     }
     
-    public List<MovietimePK> getMoviesForTheater(int theaterID){
-        return em.createNamedQuery("MovietimePK.findByTheaterid", MovietimePK.class).setParameter("theaterID", theaterID).getResultList();
+    public List<Movietime> getMoviesForTheater(int theaterID){
+        return em.createNamedQuery("Movietime.findByTheaterid", Movietime.class).setParameter("theaterID", theaterID).getResultList();
     }
     
     public List<Theater> getTheatersForZipcode(int zipcode){
         return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getResultList();
     }
     
-    
+    public List<Theater> getTheaterIDfromZipCode(int zipcode){
+        return em.createNamedQuery("Theater.findTheaterID", Theater.class).setParameter("zipcode",zipcode).getResultList();
+    }
      
 }

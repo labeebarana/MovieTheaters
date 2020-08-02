@@ -22,7 +22,7 @@ public class MovietimePK implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "THEATERID")
-    private int theaterid;
+    private String theaterid;
     @Basic(optional = false)
     @NotNull
     @Column(name = "MOVIEID")
@@ -36,17 +36,17 @@ public class MovietimePK implements Serializable {
     public MovietimePK() {
     }
 
-    public MovietimePK(int theaterid, int movieid, String starttime) {
+    public MovietimePK(String theaterid, int movieid, String starttime) {
         this.theaterid = theaterid;
         this.movieid = movieid;
         this.starttime = starttime;
     }
 
-    public int getTheaterid() {
+    public String getTheaterid() {
         return theaterid;
     }
 
-    public void setTheaterid(int theaterid) {
+    public void setTheaterid(String theaterid) {
         this.theaterid = theaterid;
     }
 
@@ -66,7 +66,7 @@ public class MovietimePK implements Serializable {
         this.starttime = starttime;
     }
 
-    @Override
+  /*  @Override
     public int hashCode() {
         int hash = 0;
         hash += (int) theaterid;
@@ -74,7 +74,7 @@ public class MovietimePK implements Serializable {
         hash += (starttime != null ? starttime.hashCode() : 0);
         return hash;
     }
-
+*/
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
