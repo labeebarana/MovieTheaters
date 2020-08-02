@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Table(name = "MOVIETIME")
 @NamedQueries({
     @NamedQuery(name = "Movietime.findAll", query = "SELECT m FROM Movietime m"),
-    @NamedQuery(name = "Movietime.findByTheaterid", query = "SELECT m FROM Movietime m WHERE m.movietimePK.theaterid = :theaterid"),
+    @NamedQuery(name = "Movietime.findByTheaterid", query = "SELECT m FROM Movietime m WHERE m.movietimePK.theaterid = :theaterID"),
     @NamedQuery(name = "Movietime.findByMovieid", query = "SELECT m FROM Movietime m WHERE m.movietimePK.movieid = :movieid"),
     @NamedQuery(name = "Movietime.findByStarttime", query = "SELECT m FROM Movietime m WHERE m.movietimePK.starttime = :starttime")})
 public class Movietime implements Serializable {
@@ -44,7 +44,7 @@ public class Movietime implements Serializable {
         this.movietimePK = movietimePK;
     }
 
-    public Movietime(int theaterid, int movieid, String starttime) {
+    public Movietime(String theaterid, int movieid, String starttime) {
         this.movietimePK = new MovietimePK(theaterid, movieid, starttime);
     }
 
