@@ -45,7 +45,7 @@ public class MovieEJB {
        return em.createNamedQuery("Theater.findByZipcode", Theater.class).setParameter("zipcode", zipcode).getSingleResult(); 
     }
     
-    public List<Movietime> getMoviesForTheater(int theaterID){
+    public List<Movietime> getMoviesForTheater(String theaterID){
         return em.createNamedQuery("Movietime.findByTheaterid", Movietime.class).setParameter("theaterID", theaterID).getResultList();
     }
     

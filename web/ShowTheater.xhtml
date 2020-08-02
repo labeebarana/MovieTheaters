@@ -17,7 +17,9 @@
                     </f:facet>
                     <h:commandLink value="Show Movies"
                                    action="ShowMovies?faces-redirect=true">
+                        <f:actionListener binding="#{showMoviesBean.showMovies()}"></f:actionListener>
                          <f:param name="theaterid" value="#{showTheatersBean.movieTimePk.theaterid}" />
+                        <f:param name="zipcode" value="#{showTheatersBean.theater.zipcode}" />
                     </h:commandLink>
          </h:column>
                 <h:column>
